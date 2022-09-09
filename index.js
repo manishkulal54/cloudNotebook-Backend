@@ -7,7 +7,15 @@ dotenv.config()
 
 const port=process.env.PORT || 3001
 
-app.use(cors())
+// app.use(cors())
+app.use(
+    cors({
+      origin: ["https://upbeat-northcutt-4650a4.netlify.app"],
+      methods: ["GET", "POST", "DELETE"],
+      credentials: true,
+      origin: true,
+    })
+  );
 app.use(express.json())
 
 app.use('/api/auth',require('./routes/User'))
