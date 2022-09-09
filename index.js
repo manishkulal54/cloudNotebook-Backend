@@ -13,9 +13,9 @@ app.use(express.json())
 app.use('/api/auth',require('./routes/User'))
 app.use('/api/note',require('./routes/Notes'))
 
-if(process.env.NODE_ENV=='production'){
-    app.use(express.static('frontend/build'));
-}
+// if(process.env.NODE_ENV=='production'){
+//     app.use(express.static('frontend/build'));
+// }
 
 app.listen(port,()=>{
 console.log('connected at port ',port);
