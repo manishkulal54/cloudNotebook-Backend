@@ -8,11 +8,6 @@ const router = express.Router();
 
 const secretKey="hell0|amM@n/$4"
 
-
-router.get('/',(req,res)=>{
-  res.send("hello")
-})
-
 // signup
 router.post("/signup", async (req, res) => {
   const { name, phone, email, password } = req.body;
