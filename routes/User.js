@@ -44,6 +44,7 @@ router.post("/signup", async (req, res) => {
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 try{
+  res.set('Access-Control-Allow-Origin', '*');
   let user = await User.findOne({ email });
   if (!user) {
     return res
