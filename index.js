@@ -11,6 +11,7 @@ app.use(cors())
 // app.use(
 //     cors({
 //       origin: ["https://upbeat-northcutt-4650a4.netlify.app"],
+//       origin: ["https://manishkulal-icloudnotebook.netlify.app"],
 //       methods: ["GET", "POST", "DELETE"],
 //       credentials: true,
 //       origin: true,
