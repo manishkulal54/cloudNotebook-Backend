@@ -15,7 +15,7 @@ router.post("/signup", async (req, res) => {
     let user = await User.findOne({ email: email });
     if (user) {
       return res
-        .status(500)
+        .status(401)
         .json({ message: "error", error: "user already have an account" });
     }
     const salt=await bcrypt.genSalt(10)
@@ -32,10 +32,10 @@ router.post("/signup", async (req, res) => {
       }
     }
     const token=jwt.sign(data,secretKey)
-    res.status(500).json({ message: "success", token });
+    res.status(201).json({ message: "success", token });
 
   }catch(e){
-    res.status(500).json({message:"error",error:"error occured while creating a user"})
+    res.status(401).json({message:"error",error:"error occured while creating a user"})
 }
 });
 
@@ -48,14 +48,14 @@ try{
   let user = await User.findOne({ email });
   if (!user) {
     return res
-      .status(500)
+      .status(200)
       .json({ message: "error", error: "invalid credential11" });
   }
   const hashPass=await bcrypt.compare(password,user.password)
 
   if (!hashPass) {
     return res
-      .status(500)
+      .status(401)
       .json({ message: "error", error: "invalid credential" });
   }
 
