@@ -13,8 +13,8 @@ const corsOpts = {
     origin: '*',
     credentials: true,
     methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],
-    allowedHeaders: ['Content-Type'],
-    exposedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type',"auth-token"],
+    exposedHeaders: ['Content-Type',"auth-token"]
 };
 app.use(cors(corsOpts));
 
