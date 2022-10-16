@@ -36,7 +36,7 @@ router.post("/signup", async (req, res) => {
   } catch (e) {
     res
       .status(401)
-      .json({ message: "error", error: "error occured while creating a user" });
+      .json({ message: "error", error: "error occured while creating a user",e });
   }
 });
 
